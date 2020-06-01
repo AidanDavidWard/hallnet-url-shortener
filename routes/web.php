@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $words = Word::all();
+    $words = Word::where('used', 0)->get();
     $urls = URL::where('private', 0)->orderBy('created_at', 'DESC')->limit(5)->get();
 
     return view(
@@ -32,6 +32,8 @@ Route::get('/', function () {
 
 Route::post('shorten', function (Request $request) {
     $params = $request->all();
+
+    dd($params);
 
     $params['private'] = isset($params['private']) ? true : false;
 

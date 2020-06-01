@@ -14,10 +14,6 @@
                     @foreach ($words as $word)
                         <option
                             value="{{ $word->id }}"
-                            @if ($word->used)
-                                disabled
-                                class="disabled"
-                            @endif
                         >
                             {{ $word->name }}
                         </option>
