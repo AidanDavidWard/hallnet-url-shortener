@@ -1,1 +1,57 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    color: $secondary;
+
+    h1 {
+        font-weight: 700;
+        font-size: 22px;
+    }
+
+    a {
+        font-size: 18px;
+        text-decoration: underline;
+        color: $primary;
+    }
+
+    :not(h1,a) {
+        font-size: 14px;
+    }
+}
+
+select option:disabled {
+    background-color: $tertiary;
+}
+
+#logo {
+    max-width: 34%;
+    min-width: 250px;
+}
+
+.container.content {
+    background: $tertiary;
+    min-height: 600px;
+}
+
+button {
+    background: $primary;
+    color: $tertiary;
+}
+
+.shortened-url-box {
+    background: $white;
+    border-color: $secondary;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: -1px;
+}

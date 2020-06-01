@@ -1,5 +1,6 @@
 <?php
 
+use App\Word;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $words = Word::all();
+    $urls = [];
+
+    return view(
+        'home',
+        [
+            'words' => $words,
+            'urls' => $urls,
+        ]
+    );
 });
