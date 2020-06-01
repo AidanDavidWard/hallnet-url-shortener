@@ -12,4 +12,9 @@ class Word extends Model
     public $fillable = [
         'name',
     ];
+
+    public function url()
+    {
+        return $this->hasOne('App\URL');
+    }
 }
