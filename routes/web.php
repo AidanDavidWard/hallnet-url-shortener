@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $words = Word::where('used', 0)->get();
-    $urls = URL::where('private', 0)->orderBy('created_at', 'DESC')->limit(5)->get();
+    $urls = URL::where('private', 0)->orderBy('created_at', 'DESC')->limit(10)->get();
 
     return view(
         'home',

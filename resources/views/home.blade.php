@@ -35,7 +35,7 @@
     </div>
     @forelse ($urls as $url)
         <div class="row ml-1 mr-1 p-3 shortened-url-box">
-            <div class="container">
+            <div class="col-6">
                 <div class="row">
                     <a href="{{ env('APP_URL') . '/' . $url->word->name }}">{{ env('APP_URL') . '/' . $url->word->name }}</a>
                 </div>
@@ -45,6 +45,9 @@
                 <div class="row">
                     <span>{{ $url->url }}</span>
                 </div>
+            </div>
+            <div class="col-6">
+                Description goes here
             </div>
         </div>
     @empty
