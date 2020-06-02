@@ -11,16 +11,16 @@ class URL extends Model
     public $fillable = [
         'url',
         'private',
-        'word_id',
+        'shortcode_id',
         'description',
     ];
 
     public $with = [
-        'word',
+        'shortcode',
     ];
 
-    public function word()
+    public function shortcode()
     {
-        return $this->belongsTo('App\Word');
+        return $this->belongsTo('App\Shortcode');
     }
 }

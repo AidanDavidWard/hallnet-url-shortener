@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Word extends Model
+class Shortcode extends Model
 {
-    protected $table = 'words';
+    protected $table = 'shortcodes';
     public $timestamps = false;
 
     public $fillable = [

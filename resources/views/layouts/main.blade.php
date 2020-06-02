@@ -17,6 +17,15 @@
         <div class="container">
             <img id="logo" src="images/logo.png">
         </div>
+        @if ( session()->has('msg') )
+            <div class="alert alert-success">{{ session()->get('msg') }}</div>
+        @endif
+
+        @if($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">{{ $error }}</div>
+            @endforeach
+        @endif
         <div class="container content p-3">
             @yield('content')
         </div>

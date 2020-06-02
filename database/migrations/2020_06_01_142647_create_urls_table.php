@@ -16,7 +16,7 @@ class CreateURLSTable extends Migration
         Schema::create('urls', function (Blueprint $table) {
             $table->id();
             $table->string('url');
-            $table->unsignedInteger('word_id');
+            $table->unsignedInteger('shortcode_id');
             $table->integer('visited');
             $table->timestamps();
         });

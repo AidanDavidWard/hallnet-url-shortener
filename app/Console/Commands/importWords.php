@@ -2,25 +2,25 @@
 
 namespace App\Console\Commands;
 
-use App\Word;
+use App\Shortcode;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 
-class importWords extends Command
+class importShortcodes extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'import:words';
+    protected $signature = 'import:shortcodes';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Takes any text files in storage/app/import and imports its words. Assumes that the last word on each line with the intended import word';
+    protected $description = 'Takes any text files in storage/app/import and imports its shortcodes. Assumes that the last word on each line with the intended import word';
 
     /**
      * Create a new command instance.
@@ -49,16 +49,16 @@ class importWords extends Command
             foreach ($files as $file) {
                 $this->info("Importing $file");
                 $file = $local->get($file);
-                $words = explode("\n", $file);
-                $wordCount = count($words);
-                $this->info("Importing $wordCount words");
-                foreach ($words as $word) {
-                    $word = preg_split('/\s+/', $word);
-                    $word = end($word);
-                    if ($word !== '') {
-                        $word = Word::firstOrCreate(['name' => $word]);
+                $shortcodes = explode("\n", $file);
+                $shortcodeCount = count($shortcodes);
+                $this->info("Importing $shortcodeCount shortcodes");
+                foreach ($shortcodes as $shortcode) {
+                    $shortcode = preg_split('/\s+/', $shortcode);
+                    $shortcode = end($shortcode);
+                    if ($shortcode !== '') {
+                        $shortcode = Shortcode::firstOrCreate(['name' => $shortcode]);
                     } else {
-                        $this->info('Word was excluded for being blank');
+                        $this->info('Shortcode was excluded for being blank');
                     }
                 }
             }

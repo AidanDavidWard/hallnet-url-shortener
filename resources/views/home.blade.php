@@ -33,7 +33,7 @@
         <div class="row ml-1 mr-1 p-3 shortened-url-box">
             <div class="col-6">
                 <div class="row">
-                    <a href="{{ '/' . $url->word->name }}">{{ env('APP_URL') . '/' . $url->word->name }}</a>
+                    <a href="{{ '/' . $url->shortcode->name }}">{{ env('APP_URL') . '/' . $url->shortcode->name }}</a>
                 </div>
                 <div class="row">
                     <span>{{ $url->created_at->diffForHumans() }} - visited {{ $url->visited }} times</span>
