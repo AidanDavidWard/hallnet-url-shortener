@@ -9,16 +9,7 @@
                 <input type="text" class="form-control" name="url" id="url" placeholder="Long URL (required)" required>
             </div>
             <div class="col-md-5">
-                <select class="form-control" name="word_id" id="word_id">
-                    <option selected>Short URL keyword (optional)</option>
-                    @foreach ($words as $word)
-                        <option
-                            value="{{ $word->id }}"
-                        >
-                            {{ $word->name }}
-                        </option>
-                    @endforeach
-                </select>
+                <input type="text" class="form-control" name="short_code" id="short_code" placeholder="Short URL keyword (optional)" minlength="5"  maxlength="15">
             </div>
             <div class="col-md-1">
                 <input type="checkbox" name="private" id="private">

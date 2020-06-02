@@ -11,6 +11,7 @@ class Word extends Model
 
     public $fillable = [
         'name',
+        'user_created',
     ];
 
     public function url()

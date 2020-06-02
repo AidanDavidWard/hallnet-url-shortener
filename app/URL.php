@@ -15,6 +15,10 @@ class URL extends Model
         'description',
     ];
 
+    public $with = [
+        'word',
+    ];
+
     public function word()
     {
         return $this->belongsTo('App\Word');
