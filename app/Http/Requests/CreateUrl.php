@@ -38,8 +38,8 @@ class CreateUrl extends FormRequest
         return [
             'url'        => 'required|max:255',
             'name' => 'sometimes|nullable|unique:shortcodes|min:5|max:15',
-            'description' => 'sometimes|max:100',
-            'private' => 'sometimes|boolean',
+            'description' => 'sometimes|max:140',
+            'private' => 'sometimes|nullable',
         ];
     }
 }

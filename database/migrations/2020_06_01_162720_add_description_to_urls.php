@@ -14,7 +14,7 @@ class AddDescriptionToUrls extends Migration
     public function up()
     {
         Schema::table('urls', function (Blueprint $table) {
-            $table->string('description', 100)->default('')->nullable();
+            $table->string('description', 140)->default('')->nullable();
         });
     }
 

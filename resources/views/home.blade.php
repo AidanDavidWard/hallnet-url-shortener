@@ -18,7 +18,7 @@
         </div>
         <div class="form-row form-group">
             <div class="col-md-11">
-                <textarea class="form-control" name="description" id="description" placeholder="Description (optional)" maxlength="100"></textarea>
+                <textarea class="form-control" name="description" id="description" placeholder="Description (optional)" maxlength="140"></textarea>
             </div>
             <div class="col-md-1">
                 <button type="submit" class="btn btn-primary">SHORTEN</button>
