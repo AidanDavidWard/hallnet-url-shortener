@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateUrl as RequestsCreateUrl;
 use App\Shortcode;
 use App\URL;
 use Illuminate\Http\Request;
@@ -14,9 +15,9 @@ class CreateURL extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function __invoke(RequestsCreateUrl $request)
     {
-        $params = $request->all();
+        $params = $request->validated();
 
         // private is a checkbox so if it's set its true
         $params['private'] = isset($params['private']);
@@ -27,11 +28,11 @@ class CreateURL extends Controller
             $params['url'] = 'http://' . $params['url'];
         }
 
-        if (isset($params['short_code'])) {
+        if (isset($params['name'])) {
             // if short_code field has been filled out save shortcode
             $shortcode = Shortcode::create([
                 'user_created' => 1,
-                'name' => $params['short_code'],
+                'name' => $params['name'],
             ]);
         } else {
             // if shortcode isn't filled out get all unused system shortcodes and pick one at random
