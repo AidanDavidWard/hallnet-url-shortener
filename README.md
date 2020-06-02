@@ -18,6 +18,9 @@
     * You can use `php artisan serve` or the valet equivelant
     * I created an Apache virtualhost to the public directory of the project. `see virtualhost.example`
 * In the root directory of the project run the following commands
+  * `composer install`
+  * `npm install`
+  * `npm run dev`
   * `php artisan migrate`
   * `php artisan import:shortcodes`
     * this command takes the contents of any file in storage/app/import and imports them into the shortcode table. By default this folder contains ONLY THE EFF WORD LIST
