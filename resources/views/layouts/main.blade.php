@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>HB-BIT @yield('title')</title>
+        <title>HN-BIT @yield('title')</title>
 
         <link rel="stylesheet" href="/css/app.css">
 

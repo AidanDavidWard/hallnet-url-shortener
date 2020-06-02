@@ -1,0 +1,14 @@
+<VirtualHost *:80>
+	ServerName short.test
+	ServerAdmin aidanward@webmaster
+	DocumentRoot /home/aidan/code/hallnet-url-shortener/public
+	LogLevel info
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+	<Directory />
+		Options FollowSymlinks
+		AllowOverride All
+		Order Allow,deny
+		Allow from all
+	</Directory>
+</VirtualHost>
