@@ -37,7 +37,7 @@ class CreateUrl extends FormRequest
     {
         return [
             'url'        => 'required|max:255',
-            'name' => 'sometimes|unique:shortcodes|min:5|max:15',
+            'name' => 'sometimes|nullable|unique:shortcodes|min:5|max:15',
             'description' => 'sometimes|max:100',
             'private' => 'sometimes|boolean',
         ];

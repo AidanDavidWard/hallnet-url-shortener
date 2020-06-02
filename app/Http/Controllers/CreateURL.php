@@ -28,7 +28,7 @@ class CreateURL extends Controller
             $params['url'] = 'http://' . $params['url'];
         }
 
-        if (isset($params['name'])) {
+        if ($params['name']) {
             // if short_code field has been filled out save shortcode
             $shortcode = Shortcode::create([
                 'user_created' => 1,
@@ -40,7 +40,7 @@ class CreateURL extends Controller
                 'used' => 0,
                 'user_created' => 0
             ])->get()->toArray();
-            $word = $shortcodes[rand(0, count($shortcodes) - 1)];
+            $shortcode = $shortcodes[rand(0, count($shortcodes) - 1)];
         }
         
         $params['shortcode_id'] = $shortcode['id'];
