@@ -12,6 +12,7 @@ class URL extends Model
         'url',
         'private',
         'word_id',
+        'description',
     ];
 
     public function word()

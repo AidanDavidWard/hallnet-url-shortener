@@ -33,8 +33,6 @@ Route::get('/', function () {
 Route::post('shorten', function (Request $request) {
     $params = $request->all();
 
-    dd($params);
-
     $params['private'] = isset($params['private']) ? true : false;
 
     if (!strpos($params['url'], 'http')) {
