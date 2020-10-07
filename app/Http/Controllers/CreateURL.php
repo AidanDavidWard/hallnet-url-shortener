@@ -24,7 +24,7 @@ class CreateURL extends Controller
 
         // if the user enters a long URL that does not start with http then we add it for them
         // http because that matches http:// and https://
-        if (!strpos($params['url'], 'http')) {
+        if (strpos($params['url'], 'http')) {
             $params['url'] = 'http://' . $params['url'];
         }
 
