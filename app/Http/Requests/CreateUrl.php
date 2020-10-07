@@ -36,7 +36,10 @@ class CreateUrl extends FormRequest
     public function rules()
     {
         return [
-            'url'        => 'required|max:255',
+            'url' => [
+                'required',
+                'regex:/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/',
+            ],
             'name' => 'sometimes|nullable|unique:shortcodes|min:5|max:15',
             'description' => 'sometimes|max:140',
             'private' => 'sometimes|nullable',
